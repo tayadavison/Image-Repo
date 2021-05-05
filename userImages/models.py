@@ -15,3 +15,13 @@ class Image(models.Model):
     def image_tag(self):
         return mark_safe('<img src="{0}" width = "150"/>'.format(self.image.url))
     image_tag.short_description = 'Image'
+
+    def format_price(self):
+        return '${0:.2f}'.format(self.price)
+    format_price.short_description = "Price"
+
+    def discount_price(self):
+        if self.discount == 0:
+            return '---'
+        return '${0:.2f}'.format(self.price-self.discount)
+    discount_price.short_description = "Discount Price"

@@ -12,4 +12,4 @@ class ImageSerializer(serializers.ModelSerializer):
     owner=serializers.ReadOnlyField(source='owner.username')
     class Meta:
         model = Image
-        fields = ['image', 'title', 'owner', 'price', 'discount']
+        fields = ['url', 'image', 'title', 'owner', 'price', 'discount']

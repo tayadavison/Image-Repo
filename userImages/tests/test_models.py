@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.utils.html import mark_safe
 
 # Tests the custom display methods from the Image model
-class TestViews(TestCase):
+class TestImageModel(TestCase):
     @classmethod
     def setUpTestData(cls):
         testUser = User.objects.create(username='test1234', password="test1234")

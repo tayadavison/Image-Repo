@@ -9,7 +9,7 @@ This website has an API section and an admin page available for superusers to ac
 ## Admin 
 The admin page displays a table with the Image, Title, Owner, Price, Discount Price (if applicable), and availability. It is available at http://localhost:8000/admin/userImages/image/.
 
-![admin page](./documentation/AdminTable.png)
+![admin page](./documentation/AdminTable.PNG)
 
 Admins can create/edit/delete images from this page.
 
@@ -22,15 +22,15 @@ The users endpoint is only available for staff users (users that have is_staff=T
 
 The images endpoint can be accessed by anyone, whether they are logged in or not. It displays a list of all images (http://localhost:8000/images/) 
 
-![image list](./documentation/ImageList.png)
+![image list](./documentation/ImageList.PNG)
 
 And details about an image (http://localhost:8000/images/{image-id}/). 
 
-![image details](./documentation/ImageDetails.png)
+![image details](./documentation/ImageDetails.PNG)
 
 If a user is logged in, they will be able to make a POST request to create a new image at http://localhost:8000/images/. The owner of the image is the user who is currently logged in.
 
-![post request](./documentation/PostRequest.png)
+![post request](./documentation/PostRequest.PNG)
 
 If the user is the image owner, in the image details page they will also be able to update the image and delete the image. 
 

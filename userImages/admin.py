@@ -3,7 +3,7 @@ from .models import Image
 # Register your models here.
 
 class AdminImageList(admin.ModelAdmin):
-    list_display = ('image_tag', 'title', 'owner', 'format_price', 'discount_price', 'available')
+    list_display = ('imageDisplay', 'title', 'owner', 'priceDisplay', 'discountPriceDisplay', 'available')
 
 
 admin.site.register(Image, AdminImageList)

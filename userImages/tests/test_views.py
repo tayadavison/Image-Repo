@@ -4,7 +4,7 @@ from userImages.models import Image
 from userImages.views import ImageViewSet, UserViewSet
 from rest_framework.test import APIRequestFactory
 
-
+# Tests the image views and the user views
 class TestImageViewSet(TestCase):
     @classmethod
     def setUpTestData(cls):

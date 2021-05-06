@@ -6,13 +6,14 @@ from rest_framework import viewsets, permissions
 from .api.permissions import IsOwnerOrReadOnly
 from .api.serializers import UserSerializer, ImageSerializer
 
-# Create your views here.
+
 class ImageViewSet(viewsets.ModelViewSet):
     """
-    API endpoint that allows images to be viewed or edited.
+    API endpoint that allows images to be viewed, created, edited and deleted.
     """
     queryset = Image.objects.all().order_by('price')
     serializer_class = ImageSerializer
+    # Permissions to only allow owners edit and delete abilities
     permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly]
 
     def perform_create(self, serializer):
@@ -25,4 +26,5 @@ class UserViewSet(viewsets.ReadOnlyModelViewSet):
     """
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
+    # Permissions to only allow viewing users if the is_staff field is True
     permission_classes = [permissions.IsAdminUser]

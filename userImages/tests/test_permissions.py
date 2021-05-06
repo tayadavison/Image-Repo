@@ -4,6 +4,7 @@ from userImages.models import Image
 from userImages.api.permissions import IsOwnerOrReadOnly
 from rest_framework.test import APIRequestFactory
 
+# Tests the custom permissions for images where only owners have edit/delete permissions
 class apiPermissionsTest(TestCase):
     @classmethod
     def setUpTestData(cls):

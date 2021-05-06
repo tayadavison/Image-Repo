@@ -9,6 +9,7 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ['url','id', 'username', 'images']
 
 class ImageSerializer(serializers.ModelSerializer):
+    #owner field cannot be modified
     owner=serializers.ReadOnlyField(source='owner.username')
     class Meta:
         model = Image

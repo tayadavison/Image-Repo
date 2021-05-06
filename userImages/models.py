@@ -13,7 +13,7 @@ class Image(models.Model):
 
 
     def image_tag(self):
-        return mark_safe('<img src="{0}" width = "150"/>'.format(self.image.url))
+        return mark_safe('<img src="{0}" width="150"/>'.format(self.image.url))
     image_tag.short_description = 'Image'
 
     def format_price(self):

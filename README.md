@@ -2,38 +2,6 @@
 
 Image repository for the Fall 2021 Shopify Developer Intern Challenge. This image repository is built with Django and Django Rest Framework.
 
-# Components
-
-This website has an API section and an admin page available for superusers to access.
-
-## Admin 
-The admin page displays a table with the Image, Title, Owner, Price, Discount Price (if applicable), and availability. It is available at http://localhost:8000/admin/userImages/image/.
-
-![admin page](./documentation/AdminTable.PNG)
-
-Admins can create/edit/delete images from this page.
-
-## API
-The root page for the API is available at http://localhost:8000/. This is the default homepage for Django Rest Framework and it displays the 2 api options available: 
-- users: http://localhost:8000/users/
-- images: http://localhost:8000/images/
-
-The users endpoint is only available for staff users (users that have is_staff=True) and it displays a list of all users or specific details about a user (http://localhost:8000/users/{user-id}/)
-
-The images endpoint can be accessed by anyone, whether they are logged in or not. It displays a list of all images (http://localhost:8000/images/) 
-
-![image list](./documentation/ImageList.PNG)
-
-And details about an image (http://localhost:8000/images/{image-id}/). 
-
-![image details](./documentation/ImageDetails.PNG)
-
-If a user is logged in, they will be able to make a POST request to create a new image at http://localhost:8000/images/. The owner of the image is the user who is currently logged in.
-
-![post request](./documentation/PostRequest.PNG)
-
-If the user is the image owner, in the image details page they will also be able to update the image and delete the image. 
-
 # Setup
 
 1. Clone the repo
@@ -77,9 +45,42 @@ Individual tests can also be run by specifying the full path the the test class 
 ```
 # run the 4 tests in the TestImageModel class
 python manage.py test userImages.tests.test_models.TestImageModel 
-# run only the test to verify the price display in the TestImageModel class
+# run only the testPriceDisplay test case in the TestImageModel class
 python manage.py test userImages.tests.test_models.TestImageModel.testPriceDisplay
 ```
+
+# Components
+
+This website has an API section and an admin page available for superusers to access.
+
+## Admin 
+The admin page displays a table with the Image, Title, Owner, Price, Discount Price (if applicable), and availability. It is available at http://localhost:8000/admin/userImages/image/.
+
+![admin page](./documentation/AdminTable.PNG)
+
+Admins can create/edit/delete images from this page.
+
+## API
+The root page for the API is available at http://localhost:8000/. This is the default homepage for Django Rest Framework and it displays the 2 api options available: 
+- users: http://localhost:8000/users/
+- images: http://localhost:8000/images/
+
+The users endpoint is only available for staff users (users that have is_staff=True) and it displays a list of all users or specific details about a user (http://localhost:8000/users/{user-id}/)
+
+The images endpoint can be accessed by anyone, whether they are logged in or not. It displays a list of all images (http://localhost:8000/images/) 
+
+![image list](./documentation/ImageList.PNG)
+
+And details about an image (http://localhost:8000/images/{image-id}/). 
+
+![image details](./documentation/ImageDetails.PNG)
+
+If a user is logged in, they will be able to make a POST request to create a new image at http://localhost:8000/images/. The owner of the image is the user who is currently logged in.
+
+![post request](./documentation/PostRequest.PNG)
+
+If the user is the image owner, in the image details page they will also be able to update the image and delete the image. 
+
 
 
 
